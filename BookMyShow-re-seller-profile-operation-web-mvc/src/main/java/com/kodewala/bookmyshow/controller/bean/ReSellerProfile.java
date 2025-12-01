@@ -1,12 +1,30 @@
 package com.kodewala.bookmyshow.controller.bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "reSellerProfile")
 public class ReSellerProfile {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	@Column
 	private String firstName;
+	@Column
 	private String lastName;
+	@Column
 	private String email;
+	@Column
 	private String password;
+	@Column
 	private String mobile;
+	@Column
 	private String pincode;
 
 	public String getFirstName() {
@@ -55,6 +73,14 @@ public class ReSellerProfile {
 
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

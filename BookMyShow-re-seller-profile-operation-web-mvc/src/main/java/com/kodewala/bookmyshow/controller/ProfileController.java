@@ -2,6 +2,8 @@ package com.kodewala.bookmyshow.controller;
 
 import java.util.UUID;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kodewala.bookmyshow.controller.bean.ReSellerProfile;
+import com.kodewala.config.HibernateConfiguration;
 
 @Controller
 public class ProfileController {
@@ -33,11 +36,20 @@ public class ProfileController {
 	public String login(@ModelAttribute ReSellerProfile sellerProfile, Model model) {
 		this.sellerProfile1 = sellerProfile;
 
+		HibernateConfiguration configuration = new HibernateConfiguration();
+
+		Session session = configuration.hibernateConfiguration();
+		Transaction txn = session.beginTransaction();
+		
+		session.save(sellerProfile);
+		txn.commit();
+
 		String name = sellerProfile.getFirstName();
 		String mob = sellerProfile.getMobile();
 
 		String userId = generateUniqueId(name, mob);
 		model.addAttribute("userID", userId);
+		model.addAttribute("userName", name);
 
 		return "login";
 	}

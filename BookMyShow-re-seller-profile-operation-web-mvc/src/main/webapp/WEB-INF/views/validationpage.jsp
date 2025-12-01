@@ -167,8 +167,8 @@
             <div class="success-message">Successfully logged in!</div>
             <div class="redirect-message">You're being redirected to your dashboard...</div>
             <div class="button-group">
-                <a href="validationPage" class="btn">Go to Dashboard</a>
-                <a href="#" class="btn btn-outline">Browse Movies</a>
+                <a href="validationPage" class="btn">Go to HomePage</a>
+                <a href="showMenu" class="btn btn-outline">Go to DashBoard </a>
             </div>
         </div>
     </div>

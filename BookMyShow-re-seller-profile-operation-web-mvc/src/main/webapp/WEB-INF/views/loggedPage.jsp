@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -515,7 +517,7 @@
                 <div class="user-section">
                     <div class="user-info">
                         <div class="user-avatar">U</div>
-                        <div class="user-name">Welcome, User!</div>
+                        <div class="user-name">Welcome: ${userName} </div>
                     </div>
                     <button class="btn btn-outline">Logout</button>
                 </div>
