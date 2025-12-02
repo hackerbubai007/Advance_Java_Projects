@@ -49,28 +49,5 @@ public class ProductDAO {
 
 	}
 
-//	public List<ProductEntity> searchProduct(String name) {
-//	    Session session = sessionFactory.openSession();
-//	    List<ProductEntity> list = session
-//	            .createQuery("FROM ProductEntity WHERE productName LIKE :name", ProductEntity.class)
-//	            .setParameter("name", "%" + name + "%")
-//	            .list();
-//	    session.close();
-//	    
-////	    System.out.println(list);
-////	    
-////	    if(list.isEmpty()||list==null) {
-////	    	
-////	    	throw new ProductNotFoundException("Product Not Found");
-////	    	
-////	    }else {
-////	    	return list;
-////	    	
-////	    }
-//	    
-//	    return list;
-//	    
-//	    
-//	}
 
 }
