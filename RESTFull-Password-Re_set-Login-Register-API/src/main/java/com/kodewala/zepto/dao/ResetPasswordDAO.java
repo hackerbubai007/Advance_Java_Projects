@@ -59,7 +59,7 @@ public class ResetPasswordDAO {
                 }
 
                 if (newPassword.equalsIgnoreCase(passwordLog.getRecentMostPassword())) {
-                    return "Password cannot match recent password!";
+                    return "Password cannot match old password!";
                 }
             }
 
